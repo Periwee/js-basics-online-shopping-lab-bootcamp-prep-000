@@ -30,10 +30,13 @@ function viewCart() {
      do{
        cartList = cartList + `${getCart()[i].itemName} at $${getCart()[i].itemPrice}`;
        i++;
-
-       cartList = cartList + (i === (cart.length-1)) ?  ", and ": ", ";
        
-
+       if(i === (cart.length-1)) {
+         cartList = cartList + ", and ";
+       } else {
+         cartList = cartList + ", ";
+       }
+       
      }while(i < cart.length);
   }
   return cartList + '.';
