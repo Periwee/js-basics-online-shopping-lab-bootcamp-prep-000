@@ -30,10 +30,9 @@ function viewCart() {
      do{
        cartList = cartList + `${getCart()[i].itemName} at $${getCart()[i].itemPrice}`;
        i++;
-       
-       if(i === (cart.length-1)) {
+       if(i==(cart.length-1)) {
          cartList = cartList + ", and ";
-       } else {
+       }else{
          cartList = cartList + ", ";
        }
 
