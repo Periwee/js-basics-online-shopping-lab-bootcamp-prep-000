@@ -23,24 +23,22 @@ function viewCart() {
   var cartList="In your cart, you have ";
   var i=0;
   var j=0;
-  if ( cart.length == 0)
-  {
+  if ( cart.length == 0) {
      return "Your shopping cart is empty."
-  }else{
+  } else {
      do{
        cartList = cartList + `${getCart()[i].itemName} at $${getCart()[i].itemPrice}`;
        i++;
-       if(i==cart.length)
-       {
+       if(i==cart.length) {
          cartList = cartList + ".";
-       }else{
+       } else {
          if(i==(cart.length-1)){
            cartList = cartList + ", and ";
-         }else{
+         } else {
            cartList = cartList + ", ";
          }
        }
-     }while(i<cart.length);
+     } while(i<cart.length);
   }
   return cartList;
 }
