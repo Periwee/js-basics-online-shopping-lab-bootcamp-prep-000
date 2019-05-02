@@ -23,26 +23,20 @@ function viewCart() {
   var cartList="In your cart, you have ";
   var i=0;
   var j=0;
-  if ( cart.length == 0)
-  {
+
+  if(cart.length === 0) {
      return "Your shopping cart is empty."
-  }else{
+  } else {
      do{
        cartList = cartList + `${getCart()[i].itemName} at $${getCart()[i].itemPrice}`;
        i++;
-       if(i==cart.length)
-       {
-         cartList = cartList + ".";
-       }else{
-         if(i==(cart.length-1)){
-           cartList = cartList + ", and ";
-         }else{
-           cartList = cartList + ", ";
-         }
-       }
-     }while(i<cart.length);
+
+       cartList = cartList + (i === (cart.length-1)) ?  ", and ": ", ";
+       
+
+     }while(i < cart.length);
   }
-  return cartList;
+  return cartList + '.';
 }
 
 
@@ -62,10 +56,8 @@ function removeFromCart(itemName) {
   var i=0;
   var itemExist=false;
   var cartLength = cart.length;
-  var name="";
 
-
-  for(i=0; i<cartLength;i++){
+  for(i=0; i<cartLength ;i++){
     var item = cart[i];
 
     if(item && item.hasOwnProperty('itemName') && item.itemName === itemName){
