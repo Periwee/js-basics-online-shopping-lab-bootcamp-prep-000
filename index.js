@@ -36,7 +36,7 @@ function viewCart() {
        } else {
          cartList = cartList + ", ";
        }
-       
+
      }while(i < cart.length);
   }
   return cartList + '.';
